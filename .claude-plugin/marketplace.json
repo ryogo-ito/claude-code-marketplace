@@ -1,0 +1,15 @@
+{
+  "name": "marketplace",
+  "description": "ryogo-ito's Marketplace",
+  "version": "1.0.0",
+  "owner": {
+    "name": "ryogo-ito"
+  },
+  "plugins": [
+    {
+      "name": "ryogo-ito",
+      "source": "./ryogo-ito",
+      "description": "This is a ryogo-ito's base tool set"
+    }
+  ]
+}
