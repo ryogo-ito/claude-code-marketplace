@@ -4,16 +4,22 @@ Claude Code 用のプラグインマーケットプレイス。開発ワーク�
 
 ## インストール
 
-### マーケットプレイスの追加
+### 1. マーケットプレイスの追加
 
 ```bash
 /plugin marketplace add ryogo-ito/claude-code-marketplace
 ```
 
-### プラグインのインストール
+### 2. プラグインのインストール
 
 ```bash
 /plugin install ryogo-ito@ryogo-ito-claude-code-marketplace
+```
+
+### インストール確認
+
+```bash
+/plugin list
 ```
 
 ## 利用可能なスキル
@@ -25,48 +31,28 @@ Claude Code 用のプラグインマーケットプレイス。開発ワーク�
 | worktree | `/worktree <branch>` | git worktree環境をセットアップ |
 | worktree-cleanup | `/worktree-cleanup` | マージ済みPRのworktreeをクリーンアップ |
 
-## スキル詳細
+各スキルの詳細は [ryogo-ito/commands/README.md](./ryogo-ito/commands/README.md) を参照。
 
-### /task
-
-要件を受け取り、調査・計画・実装・PR作成までを一貫して行うワークフロースキル。
-
-**フェーズ:**
-1. 要件の収集
-2. 影響範囲の調査
-3. 実装計画の策定
-4. エッジケース・実装仕様の検討
-5. 計画の提出と承認
-6. 実装
-7. コミットの分割と作成
-8. PR作成
-
-### /parallel-task
-
-複数の実装タスクをgit worktreeで並列実行。
-
-**フェーズ:**
-1. タスクの収集（複数タスクを入力）
-2. Worktreeの作成（各タスクごと）
-3. 並列実行（各worktreeで/taskを実行）
-4. 完了待機と結果確認
-5. Push前の確認
-6. Push & PR作成
-
-### /worktree
-
-指定したブランチ名でgit worktree環境を作成。依存関係のインストールと環境変数のコピーも実行。
+## プラグイン管理
 
 ```bash
-/worktree feat/new-feature
-```
+# マーケットプレイス一覧
+/plugin marketplace list
 
-### /worktree-cleanup
+# マーケットプレイス更新
+/plugin marketplace update ryogo-ito-claude-code-marketplace
 
-マージ済みPRに対応するworktreeを検出して削除。
+# プラグイン無効化
+/plugin disable ryogo-ito@ryogo-ito-claude-code-marketplace
 
-```bash
-/worktree-cleanup
+# プラグイン有効化
+/plugin enable ryogo-ito@ryogo-ito-claude-code-marketplace
+
+# アンインストール
+/plugin uninstall ryogo-ito@ryogo-ito-claude-code-marketplace
+
+# マーケットプレイス削除
+/plugin marketplace remove ryogo-ito-claude-code-marketplace
 ```
 
 ## ライセンス
